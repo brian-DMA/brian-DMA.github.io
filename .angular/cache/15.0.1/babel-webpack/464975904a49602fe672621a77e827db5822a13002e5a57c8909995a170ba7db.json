@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { firstValueFrom } from 'rxjs';\nexport function appInitializer(accountService) {\n  return () => new Promise(resolve => {\n    console.log('refresh token on app start up');\n    return () => firstValueFrom(accountService.refreshToken());\n  });\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
