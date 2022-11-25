@@ -1,0 +1,1 @@
+{"ast":null,"code":"export function appInitializer(accountService) {\n  return () => accountService.refreshToken().toPromise();\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

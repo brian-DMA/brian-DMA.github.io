@@ -1,0 +1,10 @@
+FROM node:18.12.1-slim as build
+WORKDIR /WebApiFront
+COPY . .
+RUN npm install -g @angular/cli
+RUN npm install
+RUN ng build
+
+FROM nginx:alpine as deploy
+WORKDIR /WebApiFront
+COPY --from=build WebApiFront/dist/sampleapp/*.* /usr/share/nginx/html/
